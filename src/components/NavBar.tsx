@@ -5,9 +5,9 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function NavBar() {
   return (
-    <div className="flex justify-between items-center bg-white  py-3 px-5 font-sans">
+    <div className="flex justify-between items-center bg-white  py-3 px-5 font-sans ">
         {/* left */}
-      <div>
+      <div className="hidden lg:block">
         Home &gt; <span className="font-bold text-blue-800">Dashboardv2</span>
       </div>
 
@@ -25,10 +25,10 @@ export default function NavBar() {
 
       {/* right */}
       <div className="flex justify-between gap-14 items-center ">
-        <IoIosArrowDown className="cursor-pointer" />
+        <IoIosArrowDown className="cursor-pointer hidden lg:block" />
 
-        <CiBellOn className="text-2xl cursor-pointer" />
-        <div className="flex justify-center gap-2 items-center border-2 px-4 cursor-pointer py-1 border-blue-800 rounded">
+        <CiBellOn className="text-2xl cursor-pointer hidden lg:block" />
+        <div className="flex justify-center gap-2 items-center border-2 px-4 cursor-pointer py-1 ml-5 md:ml-0 border-blue-800 rounded">
           <FaRegUserCircle className="text-blue-800" />
           Login
         </div>
