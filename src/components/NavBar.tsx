@@ -2,6 +2,8 @@ import { FaSearch } from "react-icons/fa";
 import { CiBellOn } from "react-icons/ci";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
+
 
 export default function NavBar() {
   return (
@@ -23,11 +25,17 @@ export default function NavBar() {
         />
       </div>
 
+        
+      
+
       {/* right */}
       <div className="flex justify-between gap-14 items-center ">
         <IoIosArrowDown className="cursor-pointer hidden lg:block" />
 
         <CiBellOn className="text-2xl cursor-pointer hidden lg:block" />
+        <a href="https://github.com/shivPratap007/assignment-01" target="_blank"><FaGithub className="text-2xl cursor-pointer"/></a>
+
+        
         <div className="flex justify-center gap-2 items-center border-2 px-4 cursor-pointer py-1 ml-5 md:ml-0 border-blue-800 rounded">
           <FaRegUserCircle className="text-blue-800" />
           Login
