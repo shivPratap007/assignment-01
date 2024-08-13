@@ -1,7 +1,9 @@
+// Hero.tsx
 import { allData } from "../utils/CardsData";
 import CircularRow from "./CircularRow";
 import Heading from "./Heading";
 
+// Ensure allData conforms to the TallCards type
 export default function Hero() {
   return (
     <section className="w-content bg-slate-200 min-h-screen">

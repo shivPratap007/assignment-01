@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function NavBar() {
   return (
-    <div className="flex justify-between items-center  py-3 px-5 font-sans">
+    <div className="flex justify-between items-center bg-white  py-3 px-5 font-sans">
         {/* left */}
       <div>
         Home &gt; <span className="font-bold text-blue-800">Dashboardv2</span>
