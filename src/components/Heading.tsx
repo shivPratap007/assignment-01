@@ -1,4 +1,3 @@
-// Heading.tsx
 import { FaPlus } from "react-icons/fa";
 import { TfiReload } from "react-icons/tfi";
 import { SlOptionsVertical } from "react-icons/sl";
@@ -23,13 +22,13 @@ export default function Heading({ onAddCategoryClick }: HeadingProps) {
           Add Widget Cat.
           <FaPlus />
         </div>
-        <div className="flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-gray-400 bg-white rounded">
+        <div className="hidden lg:flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-gray-400 bg-white rounded">
           <TfiReload />
         </div>
-        <div className="flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-gray-400 bg-white rounded">
+        <div className="hidden lg:flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-gray-400 bg-white rounded">
           <SlOptionsVertical />
         </div>
-        <div className="flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-blue-800 bg-white rounded">
+        <div className="hidden sm:flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-blue-800 bg-white rounded">
           <div className="flex items-center">
             <div className="relative">
               <FaClock className="text-blue-800 mr-2" />
