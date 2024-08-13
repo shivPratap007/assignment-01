@@ -68,12 +68,12 @@ export const allData = [
     widgetRowTitle: "CWPP Dashboard",
     cards: [
       {
-        title: "Cloud accounts",
+        title: "Top 5 namespace specific alerts",
         data: [],
         chartData: {},
       },
       {
-        title: "Cloud accounts risk assessment",
+        title: "Work Load alerts",
         data: [],
         chartData: {},
       },
