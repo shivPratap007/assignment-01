@@ -13,7 +13,7 @@ export default function CircularRow({ rowData }: { rowData: TrowData }) {
       <div>
         <h2 className="font-medium">{rowData.widgetRowTitle}</h2>
       </div>
-      <div className="flex flex-wrap items-center gap-5 align-middle justify-between">
+      <div className="flex flex-wrap items-center gap-5 align-middle md:justify-start justify-center">
         {rowData.cards.map((card) => (
           <Cards
             key={card.id}
