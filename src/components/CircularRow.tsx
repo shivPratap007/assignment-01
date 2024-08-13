@@ -5,8 +5,8 @@ import { TrowData } from "../utils/CardsData";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function CircularRow({ rowData }: { rowData: TrowData }) {
-  const rowIndex = 0;
+export default function CircularRow({ rowData,rowIndex }: { rowData: TrowData,rowIndex:number }) {
+  
 
   return (
     <div className="mx-6 w-content mb-5">

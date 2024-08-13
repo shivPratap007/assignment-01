@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useStore } from "../store";
 import CircularRow from "./CircularRow";
 import Heading from "./Heading";
@@ -15,8 +15,8 @@ export default function Hero() {
     <section className="w-content bg-slate-200 min-h-screen">
       <Heading onAddCategoryClick={handleAddCategoryClick} />
       {showForm && <AddCategoryForm onClose={handleCloseForm} />}
-      { allData.map((row, rowIndex) => (
-        <CircularRow rowData={row}  key={rowIndex} />
+      {allData.map((row, rowIndex) => (
+        <CircularRow rowData={row} rowIndex={rowIndex} key={rowIndex} />
       ))}
     </section>
   );
