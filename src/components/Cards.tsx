@@ -1,10 +1,10 @@
 import { Doughnut } from "react-chartjs-2";
 import { Tcard } from "../utils/CardsData";
-import { useStore } from "../store"; // Import the store
+import { useStore } from "../store"; 
 
 interface CardsProps {
   cardData: Tcard;
-  rowIndex: number; // Added rowIndex prop
+  rowIndex: number; 
 }
 
 const Cards = ({ cardData, rowIndex }: CardsProps) => {
@@ -29,7 +29,7 @@ const Cards = ({ cardData, rowIndex }: CardsProps) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 w-96 min-h-60 flex flex-col relative">
+    <div className="bg-white shadow-lg rounded-lg p-4 w-96 min-h-60 flex flex-col relative z-10">
       <button
         className="absolute top-2 right-2 text-gray-500 text-lg"
         onClick={() => removeCard(rowIndex, cardData.id)} // Pass both rowIndex and cardId

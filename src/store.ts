@@ -1,11 +1,13 @@
 import create from "zustand";
-import { TallCards } from "./utils/CardsData";
+import { TallCards, Tcard, TrowData } from "./utils/CardsData";
 
 // Define the Zustand store
 type StoreState = {
   allData: TallCards;
   setAllData: (data: TallCards) => void;
   removeCard: (rowIndex: number, cardId: string) => void;
+  addCategory: (widgetRowTitle: string) => void;
+  addCard: (rowIndex: number, card: Tcard) => void;
 };
 
 // Create the Zustand store
@@ -50,7 +52,6 @@ export const useStore = create<StoreState>((set) => ({
             ],
           },
         },
-        
       ],
     },
     {
@@ -59,9 +60,7 @@ export const useStore = create<StoreState>((set) => ({
         {
           id: "3",
           title: "Top 5 namespace specific alerts",
-          data: [
-           
-          ],
+          data: [],
           chartData: {
             labels: ["Connected", "Not Connected"],
             datasets: [
@@ -75,9 +74,7 @@ export const useStore = create<StoreState>((set) => ({
         {
           id: "4",
           title: "Workload alerts",
-          data: [
-            
-          ],
+          data: [],
           chartData: {
             labels: ["Failed", "Warning", "Not available", "Passed"],
             datasets: [
@@ -88,19 +85,35 @@ export const useStore = create<StoreState>((set) => ({
             ],
           },
         },
-        
       ],
     },
   ],
   setAllData: (data: TallCards) => set({ allData: data }),
-  removeCard: (rowIndex, cardId) => set((state) => ({
-    allData: state.allData.map((row, index) =>
-      index === rowIndex
-        ? {
-            ...row,
-            cards: row.cards.filter((card) => card.id !== cardId),
-          }
-        : row
-    ),
-  })),
+  removeCard: (rowIndex, cardId) =>
+    set((state) => ({
+      allData: state.allData.map((row, index) =>
+        index === rowIndex
+          ? {
+              ...row,
+              cards: row.cards.filter((card) => card.id !== cardId),
+            }
+          : row
+      ),
+    })),
+  addCategory: (widgetRowTitle) =>
+    set((state) => ({
+      allData: [
+        ...state.allData,
+        {
+          widgetRowTitle,
+          cards: [],
+        } as TrowData,
+      ],
+    })),
+  addCard: (rowIndex, card) =>
+    set((state) => ({
+      allData: state.allData.map((row, index) =>
+        index === rowIndex ? { ...row, cards: [...row.cards, card] } : row
+      ),
+    })),
 }));
