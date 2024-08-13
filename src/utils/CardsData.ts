@@ -1,23 +1,6 @@
 // utils/CardsData.ts
 export type Tcard = {
-  title: string;
-  data?: {
-    label: string;
-    value: number;
-    color: string;
-  }[];
-  chartData?: {
-    labels?: string[];
-    datasets: {
-      data: number[];
-      backgroundColor: string[];
-    }[];
-  };
-};
-
-export type TrowData = {
-  widgetRowTitle: string;
-  cards: {
+    id: string;
     title: string;
     data?: {
       label: string;
@@ -31,16 +14,23 @@ export type TrowData = {
         backgroundColor: string[];
       }[];
     };
-  }[];
-};
-
-export type TallCards = TrowData[]; // Array of TrowData
+  };
+  
+  export type TrowData = {
+    widgetRowTitle: string;
+    cards: Tcard[];
+  };
+  
+  export type TallCards = TrowData[];
+   // Array of TrowData
 
 export const allData:TallCards = [
   {
+    
     widgetRowTitle: "CSPM Executive Dashboard",
     cards: [
       {
+        id:"1",
         title: "Cloud accounts",
         data: [
           { label: "Connected", value: 2, color: "#4285F4" },
@@ -57,6 +47,7 @@ export const allData:TallCards = [
         },
       },
       {
+        id:"2",
         title: "Cloud accounts risk assessment",
         data: [
           { label: "Failed", value: 29, color: "#FF0000" },
@@ -75,6 +66,7 @@ export const allData:TallCards = [
         },
       },
       {
+        id:"3",
         title: "Cloud accounts risk assessment",
         data:[],
         chartData: {

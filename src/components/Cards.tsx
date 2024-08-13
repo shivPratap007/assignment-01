@@ -1,8 +1,15 @@
 import { Doughnut } from "react-chartjs-2";
 import { Tcard } from "../utils/CardsData";
+import { useStore } from "../store"; // Import the store
 
-const Cards = ({ cardData }: { cardData: Tcard }) => {
-  // Define default values for chartData
+interface CardsProps {
+  cardData: Tcard;
+  rowIndex: number; // Added rowIndex prop
+}
+
+const Cards = ({ cardData, rowIndex }: CardsProps) => {
+  const removeCard = useStore((state) => state.removeCard);
+
   const defaultChartData = {
     labels: [],
     datasets: [
@@ -22,15 +29,21 @@ const Cards = ({ cardData }: { cardData: Tcard }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4 w-96 min-h-60 flex flex-col">
+    <div className="bg-white shadow-lg rounded-lg p-4 w-96 min-h-60 flex flex-col relative">
+      <button
+        className="absolute top-2 right-2 text-gray-500 text-lg"
+        onClick={() => removeCard(rowIndex, cardData.id)} // Pass both rowIndex and cardId
+      >
+        &times;
+      </button>
       <h3 className="text-lg font-semibold mb-4">{cardData.title}</h3>
       {cardData.data?.length ? (
         <div className="flex items-center justify-between">
           <div className="flex justify-center mb-4">
             <div style={{ width: "150px", height: "150px" }}>
-              <Doughnut 
-                data={cardData?.chartData || defaultChartData} 
-                options={chartOptions} 
+              <Doughnut
+                data={cardData?.chartData || defaultChartData}
+                options={chartOptions}
               />
             </div>
           </div>
@@ -38,7 +51,7 @@ const Cards = ({ cardData }: { cardData: Tcard }) => {
             {cardData.data.map((item, index) => (
               <div key={index} className="flex items-center space-x-2">
                 <span
-                  className="block w-3 h-3 rounded-full" 
+                  className="block w-3 h-3 rounded-full"
                   style={{ backgroundColor: item.color }}
                 ></span>
                 <span>

@@ -1,15 +1,15 @@
-// Hero.tsx
-import { allData } from "../utils/CardsData";
+import { useStore } from "../store";
 import CircularRow from "./CircularRow";
 import Heading from "./Heading";
 
-// Ensure allData conforms to the TallCards type
 export default function Hero() {
+  const allData = useStore((state) => state.allData);
+
   return (
     <section className="w-content bg-slate-200 min-h-screen">
       <Heading />
-      {allData.map((row) => (
-        <CircularRow rowData={row} key={row.widgetRowTitle} />
+      {allData.map((row, rowIndex) => (
+        <CircularRow rowData={row} rowIndex={rowIndex} key={rowIndex} />
       ))}
     </section>
   );
