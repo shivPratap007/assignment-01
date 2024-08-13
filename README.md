@@ -19,6 +19,9 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/shivPratap007/assignment-01/
    cd <repository-directory>
+2. Move into the folder:
+   ```bash
+   cd <folder name>
 2. Install dependencies:
    ```bash
    npm install
