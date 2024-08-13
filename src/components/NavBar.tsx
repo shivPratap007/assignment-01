@@ -8,7 +8,7 @@ export default function NavBar() {
     <div className="flex justify-between items-center  py-3 px-5 font-sans">
         {/* left */}
       <div>
-        Home &lt; <span className="font-bold text-blue-800">Dashboardv2</span>
+        Home &gt; <span className="font-bold text-blue-800">Dashboardv2</span>
       </div>
 
       {/* middle */}
@@ -23,7 +23,7 @@ export default function NavBar() {
         />
       </div>
 
-      {/* top */}
+      {/* right */}
       <div className="flex justify-between gap-14 items-center ">
         <IoIosArrowDown className="cursor-pointer" />
 
