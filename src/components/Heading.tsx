@@ -5,7 +5,7 @@ import { FaClock } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
 type HeadingProps = {
-  onAddCategoryClick: () => void; // Prop for the add category callback
+  onAddCategoryClick: () => void; 
 };
 
 export default function Heading({ onAddCategoryClick }: HeadingProps) {
@@ -17,7 +17,7 @@ export default function Heading({ onAddCategoryClick }: HeadingProps) {
       <div className="flex gap-4">
         <div
           className="flex items-center gap-2 border-2 px-2 py-1 cursor-pointer border-gray-400 rounded bg-white"
-          onClick={onAddCategoryClick} // Attach the callback
+          onClick={onAddCategoryClick} 
         >
           Add Widget Cat.
           <FaPlus />

@@ -1,7 +1,6 @@
 import create from "zustand";
 import { TallCards, Tcard, TrowData } from "./utils/CardsData";
 
-// Define the Zustand store
 type StoreState = {
   allData: TallCards;
   setAllData: (data: TallCards) => void;
@@ -10,7 +9,6 @@ type StoreState = {
   addCard: (rowIndex: number, card: Tcard) => void;
 };
 
-// Create the Zustand store
 export const useStore = create<StoreState>((set) => ({
   allData: [
     {

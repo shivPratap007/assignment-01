@@ -1,10 +1,9 @@
-// AddCard.tsx
-import { FaPlus } from 'react-icons/fa';
-import AddCardForm from './AddCardForm'; 
-import { useState } from 'react';
+import { FaPlus } from "react-icons/fa";
+import AddCardForm from "./AddCardForm";
+import { useState } from "react";
 
 interface AddCardProps {
-  rowIndex: number; // Index of the row where the card will be added
+  rowIndex: number; 
 }
 
 const AddCard = ({ rowIndex }: AddCardProps) => {

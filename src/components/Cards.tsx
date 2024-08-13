@@ -32,7 +32,7 @@ const Cards = ({ cardData, rowIndex }: CardsProps) => {
     <div className="bg-white shadow-lg rounded-lg p-4 w-96 min-h-60 flex flex-col relative z-10">
       <button
         className="absolute top-2 right-2 text-gray-500 text-lg"
-        onClick={() => removeCard(rowIndex, cardData.id)} // Pass both rowIndex and cardId
+        onClick={() => removeCard(rowIndex, cardData.id)} 
       >
         &times;
       </button>

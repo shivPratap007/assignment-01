@@ -1,4 +1,3 @@
-// utils/CardsData.ts
 export type Tcard = {
     id: string;
     title: string;
@@ -22,7 +21,6 @@ export type Tcard = {
   };
   
   export type TallCards = TrowData[];
-   // Array of TrowData
 
 export const allData:TallCards = [
   {
