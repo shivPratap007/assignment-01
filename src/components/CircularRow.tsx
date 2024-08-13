@@ -1,6 +1,7 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Cards from "./Cards";
 import { cardData } from "../utils/CardsData";
+import AddCard from "./AddCard";
 
 // Register the required components with ChartJS
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -20,6 +21,7 @@ export default function CircularRow() {
             chartData={card.chartData}
           />
         ))}
+        <AddCard/>
       </div>
     </div>
   );
