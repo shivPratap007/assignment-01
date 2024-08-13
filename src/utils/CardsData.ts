@@ -1,5 +1,23 @@
 // utils/CardsData.ts
 export type Tcard = {
+  title: string;
+  data?: {
+    label: string;
+    value: number;
+    color: string;
+  }[];
+  chartData?: {
+    labels?: string[];
+    datasets: {
+      data: number[];
+      backgroundColor: string[];
+    }[];
+  };
+};
+
+export type TrowData = {
+  widgetRowTitle: string;
+  cards: {
     title: string;
     data?: {
       label: string;
@@ -7,24 +25,18 @@ export type Tcard = {
       color: string;
     }[];
     chartData?: {
-      labels: string[];
+      labels?: string[];
       datasets: {
         data: number[];
         backgroundColor: string[];
       }[];
     };
-  };
-  
-  export type TrowData = {
-    widgetRowTitle: string;
-    cards: Tcard[];
-  };
-  
-  export type TallCards = TrowData[]; // Array of TrowData
-  
-  
+  }[];
+};
 
-export const allData = [
+export type TallCards = TrowData[]; // Array of TrowData
+
+export const allData:TallCards = [
   {
     widgetRowTitle: "CSPM Executive Dashboard",
     cards: [
@@ -62,20 +74,18 @@ export const allData = [
           ],
         },
       },
-    ],
-  },
-  {
-    widgetRowTitle: "CWPP Dashboard",
-    cards: [
       {
-        title: "Top 5 namespace specific alerts",
-        data: [],
-        chartData: {},
-      },
-      {
-        title: "Work Load alerts",
-        data: [],
-        chartData: {},
+        title: "Cloud accounts risk assessment",
+        data:[],
+        chartData: {
+          labels: ["Connected", "Not Connected"],
+          datasets: [
+            {
+              data: [29, 34, 12, 2],
+              backgroundColor: ["#FF0000", "#00FF00", "#FFFF00", "#808080"],
+            },
+          ],
+        },
       },
     ],
   },
