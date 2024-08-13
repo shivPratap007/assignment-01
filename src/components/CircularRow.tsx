@@ -1,19 +1,39 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Cards from "./Cards";
-import { cardData } from "../utils/CardsData";
 import AddCard from "./AddCard";
 
 // Register the required components with ChartJS
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function CircularRow() {
+type TCardData = {
+  title: string;
+  data: {
+    label: string;
+    value: number;
+    color: string;
+  }[];
+  chartData: {
+    labels: string[];
+    datasets: {
+      data: number[];
+      backgroundColor: string[];
+    }[];
+  };
+};
+
+type TrowData = {
+  widgetRowTitle: string;
+  cards: TCardData[];
+};
+
+export default function CircularRow({ rowData }: { rowData: TrowData }) {
   return (
     <div className="mx-6 w-content">
       <div>
-        <h2 className="font-medium">CSPM Executive Dashboard</h2>
+        <h2 className="font-medium">{rowData.widgetRowTitle}</h2>
       </div>
       <div className="flex flex-wrap items-center gap-5 align-middle justify-between">
-        {cardData.map((card) => (
+        {rowData.cards.map((card) => (
           <Cards
             key={card.title}
             title={card.title}
@@ -21,7 +41,7 @@ export default function CircularRow() {
             chartData={card.chartData}
           />
         ))}
-        <AddCard/>
+        <AddCard />
       </div>
     </div>
   );
