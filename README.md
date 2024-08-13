@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
    npm run dev
 4. Open your browser and navigate to:
    ```bash
-   [npm run dev](http://localhost:5173)
+   http://localhost:5173
 
 ## Features
 
