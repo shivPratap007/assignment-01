@@ -1,4 +1,4 @@
-# Dashboard Widget Management
+# Dashboard Widget Management 
 
 This project is a dynamic dashboard page created using Vite, where users can manage widgets within different categories. The application allows users to add, remove, and search for widgets dynamically.
 
@@ -46,5 +46,14 @@ To run this project locally, follow these steps:
 - **State Management**: (Specify the tool used, e.g., Zustand, Redux, etc.)
 - **CSS/SCSS**: For styling the components.
 
+## Contributing
 
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
